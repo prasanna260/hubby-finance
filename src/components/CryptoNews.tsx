@@ -110,7 +110,7 @@ const CryptoNews = () => {
       case 'negative':
         return <TrendingDown className="w-4 h-4 text-red-500" />;
       default:
-        return <Calendar className="w-4 h-4 text-gray-500" />;
+        return <Calendar className="w-4 h-4 text-muted-foreground" />;
     }
   };
 
@@ -150,7 +150,7 @@ const CryptoNews = () => {
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center">
                   {getImpactIcon(item.impact)}
-                  <span className="text-sm text-gray-600 ml-2">{item.time}</span>
+                  <span className="text-sm text-muted-foreground ml-2">{item.time}</span>
                 </div>
               </div>
               

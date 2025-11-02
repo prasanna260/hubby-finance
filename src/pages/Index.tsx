@@ -60,7 +60,7 @@ const Index = () => {
                     feature.color === 'purple' ? 'cyber-gradient' :
                     'cyber-gradient-cyan'
                   } flex items-center justify-center relative`}>
-                    <feature.icon className="w-16 h-16 text-white relative z-10" />
+                    <feature.icon className="w-16 h-16 text-foreground relative z-10" />
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 scan-lines"></div>
                   </div>
                   <div className="p-6">
@@ -99,7 +99,7 @@ const Index = () => {
               Explore expert articles, tips, and strategies to help you master your finances and achieve your financial goals.
             </p>
             <Link to="/blog">
-              <Button size="lg" className="cyber-gradient text-white text-lg px-8 py-6 rounded-xl group glow-purple hover:glow-neon transition-all duration-300">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-xl transition-all duration-300">
                 Visit Our Blog
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
