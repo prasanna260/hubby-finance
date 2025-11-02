@@ -1,0 +1,571 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cyberpunk Dark Theme - Default */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cyberpunk Purple Primary */
+    --primary: 280 100% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Cyberpunk Cyan Secondary */
+    --secondary: 190 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --info: 190 100% 60%;
+    --info-foreground: 0 0% 100%;
+    
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 280 100% 70%;
+    
+    /* Cyberpunk Chart Colors */
+    --chart-1: 280 100% 70%;
+    --chart-2: 190 100% 60%;
+    --chart-3: 320 90% 65%;
+    --chart-4: 170 90% 55%;
+    --chart-5: 262 52% 47%;
+
+    --radius: 0.75rem;
+
+    /* Cyberpunk Gradients */
+    --gradient-purple: linear-gradient(135deg, hsl(280 100% 70%), hsl(260 100% 65%));
+    --gradient-cyan: linear-gradient(135deg, hsl(190 100% 60%), hsl(180 100% 55%));
+    --gradient-cyber: linear-gradient(135deg, hsl(280 100% 70%), hsl(190 100% 60%));
+    --gradient-cyber-alt: linear-gradient(135deg, hsl(190 100% 60%), hsl(280 100% 70%));
+    --gradient-dark: linear-gradient(195deg, hsl(220 18% 20%), hsl(220 15% 25%));
+    --gradient-neon: linear-gradient(135deg, hsl(280 100% 65%), hsl(190 100% 60%), hsl(320 90% 65%));
+    
+    /* Cyberpunk Shadows & Glows */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.7), 0 8px 10px -6px rgb(0 0 0 / 0.7);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.8);
+    
+    /* Cyberpunk Neon Glows */
+    --glow-purple: 0 0 20px hsl(280 100% 70% / 0.5), 0 0 40px hsl(280 100% 70% / 0.3);
+    --glow-cyan: 0 0 20px hsl(190 100% 60% / 0.5), 0 0 40px hsl(190 100% 60% / 0.3);
+    --glow-neon: 0 0 20px hsl(280 100% 70% / 0.4), 0 0 40px hsl(190 100% 60% / 0.3);
+    --glow-pink: 0 0 20px hsl(320 90% 65% / 0.5), 0 0 40px hsl(320 90% 65% / 0.3);
+
+    /* Glass effect variables */
+    --glass-bg: hsl(222 47% 11% / 0.6);
+    --glass-border: hsl(280 100% 70% / 0.2);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 280 100% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 280 100% 70%;
+  }
+
+  .light {
+    /* Light Theme - Optional */
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 280 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 280 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --info: 190 100% 50%;
+    --info-foreground: 0 0% 100%;
+    
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 280 100% 60%;
+    
+    --chart-1: 280 100% 60%;
+    --chart-2: 190 100% 50%;
+    --chart-3: 320 90% 55%;
+    --chart-4: 170 90% 45%;
+    --chart-5: 262 52% 47%;
+
+    --glass-bg: hsl(0 0% 100% / 0.7);
+    --glass-border: hsl(280 100% 60% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 280 100% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 280 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Cyberpunk Glass Effects */
+  .glass {
+    @apply backdrop-blur-xl border rounded-xl shadow-lg;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-xl rounded-xl shadow-xl;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Cyberpunk Neon Borders */
+  .neon-border-purple {
+    box-shadow: inset 0 0 0 1px hsl(280 100% 70% / 0.4), var(--glow-purple);
+    border: 1px solid hsl(280 100% 70% / 0.3);
+  }
+  
+  .neon-border-cyan {
+    box-shadow: inset 0 0 0 1px hsl(190 100% 60% / 0.4), var(--glow-cyan);
+    border: 1px solid hsl(190 100% 60% / 0.3);
+  }
+  
+  .neon-border {
+    box-shadow: inset 0 0 0 1px hsl(280 100% 70% / 0.4), var(--glow-neon);
+    border: 1px solid hsl(280 100% 70% / 0.3);
+  }
+
+  /* Cyberpunk Neon Text */
+  .neon-text-purple {
+    @apply font-semibold;
+    text-shadow: 0 0 20px hsl(280 100% 70% / 0.8), 0 0 40px hsl(280 100% 70% / 0.5);
+    color: hsl(280 100% 80%);
+  }
+  
+  .neon-text-cyan {
+    @apply font-semibold;
+    text-shadow: 0 0 20px hsl(190 100% 60% / 0.8), 0 0 40px hsl(190 100% 60% / 0.5);
+    color: hsl(190 100% 70%);
+  }
+
+  /* Cyberpunk Gradients */
+  .cyber-gradient {
+    background-image: var(--gradient-cyber);
+  }
+  
+  .cyber-gradient-alt {
+    background-image: var(--gradient-cyber-alt);
+  }
+  
+  .cyber-gradient-purple {
+    background-image: var(--gradient-purple);
+  }
+  
+  .cyber-gradient-cyan {
+    background-image: var(--gradient-cyan);
+  }
+
+  /* Cyberpunk Glows */
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .glow-neon {
+    box-shadow: var(--glow-neon);
+  }
+
+  /* Cyberpunk Animated Border */
+  .animated-border {
+    position: relative;
+    background: var(--glass-bg);
+    border: 1px solid hsl(280 100% 70% / 0.3);
+  }
+  
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-cyber);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(10px);
+  }
+  
+  .animated-border:hover::before {
+    opacity: 0.7;
+  }
+
+  /* Scan Lines Effect */
+  .scan-lines {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Grid Background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsl(280 100% 70% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(280 100% 70% / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Cyberpunk Stat Cards */
+  .cyber-card-purple {
+    @apply relative overflow-hidden rounded-2xl p-6 text-white shadow-lg transition-all duration-300;
+    background: var(--glass-bg);
+    border: 1px solid hsl(280 100% 70% / 0.3);
+    box-shadow: var(--glow-purple);
+  }
+  
+  .cyber-card-purple:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-purple), 0 14px 26px -12px hsl(280 100% 70% / 0.6);
+    border-color: hsl(280 100% 70% / 0.6);
+  }
+
+  .cyber-card-cyan {
+    @apply relative overflow-hidden rounded-2xl p-6 text-white shadow-lg transition-all duration-300;
+    background: var(--glass-bg);
+    border: 1px solid hsl(190 100% 60% / 0.3);
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .cyber-card-cyan:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-cyan), 0 14px 26px -12px hsl(190 100% 60% / 0.6);
+    border-color: hsl(190 100% 60% / 0.6);
+  }
+
+  .cyber-card-pink {
+    @apply relative overflow-hidden rounded-2xl p-6 text-white shadow-lg transition-all duration-300;
+    background: var(--glass-bg);
+    border: 1px solid hsl(320 90% 65% / 0.3);
+    box-shadow: var(--glow-pink);
+  }
+  
+  .cyber-card-pink:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-pink), 0 14px 26px -12px hsl(320 90% 65% / 0.6);
+    border-color: hsl(320 90% 65% / 0.6);
+  }
+
+  .cyber-card {
+    @apply relative overflow-hidden rounded-2xl p-6 text-white shadow-lg transition-all duration-300;
+    background: var(--glass-bg);
+    border: 1px solid hsl(280 100% 70% / 0.2);
+  }
+  
+  .cyber-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-neon);
+    border-color: hsl(280 100% 70% / 0.5);
+  }
+
+  /* Legacy stat cards for compatibility */
+  .stat-card-blue {
+    @apply cyber-card-purple;
+  }
+  
+  .stat-card-green {
+    @apply cyber-card-cyan;
+  }
+
+  .stat-card-pink {
+    @apply cyber-card-pink;
+  }
+
+  .stat-card-dark {
+    @apply cyber-card;
+  }
+
+  .stat-card-orange {
+    @apply cyber-card-pink;
+  }
+
+  /* Cyberpunk Card Styles */
+  .financial-card {
+    @apply rounded-xl backdrop-blur-xl p-6 shadow-lg transition-all duration-300;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .financial-card:hover {
+    box-shadow: var(--glow-neon);
+    border-color: hsl(280 100% 70% / 0.4);
+  }
+
+  .premium-card {
+    @apply rounded-xl backdrop-blur-xl shadow-lg transition-all duration-300 hover:-translate-y-1;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .premium-card:hover {
+    box-shadow: var(--glow-purple);
+    border-color: hsl(280 100% 70% / 0.4);
+  }
+
+  .material-card {
+    @apply rounded-xl backdrop-blur-xl shadow-md border overflow-hidden transition-all duration-300 hover:shadow-xl;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+  
+  .material-card:hover {
+    border-color: hsl(280 100% 70% / 0.3);
+  }
+
+  .material-card-header {
+    @apply p-6 -mt-8 mx-4 rounded-xl shadow-lg;
+  }
+  
+  /* Cyberpunk Icon Backgrounds */
+  .icon-bg-purple {
+    @apply w-16 h-16 rounded-xl flex items-center justify-center text-white;
+    background: var(--gradient-purple);
+    box-shadow: var(--glow-purple);
+  }
+
+  .icon-bg-cyan {
+    @apply w-16 h-16 rounded-xl flex items-center justify-center text-white;
+    background: var(--gradient-cyan);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .icon-bg-neon {
+    @apply w-16 h-16 rounded-xl flex items-center justify-center text-white;
+    background: var(--gradient-cyber);
+    box-shadow: var(--glow-neon);
+  }
+
+  /* Legacy icon backgrounds */
+  .icon-bg-blue {
+    @apply icon-bg-cyan;
+  }
+
+  .icon-bg-green {
+    @apply icon-bg-cyan;
+  }
+
+  .icon-bg-pink {
+    @apply icon-bg-purple;
+  }
+
+  .icon-bg-dark {
+    @apply icon-bg-neon;
+  }
+
+  .icon-bg-orange {
+    @apply icon-bg-purple;
+  }
+  
+  /* Cyberpunk Buttons */
+  .btn-cyber-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-white transition-all duration-200 border;
+    background: var(--gradient-purple);
+    border-color: hsl(280 100% 70% / 0.5);
+    box-shadow: var(--glow-purple);
+  }
+
+  .btn-cyber-primary:hover {
+    box-shadow: var(--glow-purple), 0 10px 20px hsl(280 100% 70% / 0.5);
+    transform: translateY(-2px);
+    border-color: hsl(280 100% 70% / 0.8);
+  }
+
+  .btn-cyber-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-white transition-all duration-200 border;
+    background: var(--gradient-cyan);
+    border-color: hsl(190 100% 60% / 0.5);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .btn-cyber-secondary:hover {
+    box-shadow: var(--glow-cyan), 0 10px 20px hsl(190 100% 60% / 0.5);
+    transform: translateY(-2px);
+    border-color: hsl(190 100% 60% / 0.8);
+  }
+
+  /* Legacy button mappings */
+  .btn-material-primary {
+    @apply btn-cyber-primary;
+  }
+
+  .btn-material-success {
+    @apply btn-cyber-secondary;
+  }
+
+  /* Cyberpunk Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-cyber);
+  }
+
+  .gradient-purple-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purple);
+  }
+
+  .gradient-cyan-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-cyan);
+  }
+
+  /* Legacy gradient text */
+  .gradient-success-text {
+    @apply gradient-cyan-text;
+  }
+
+  .gradient-pink-text {
+    @apply gradient-purple-text;
+  }
+
+  /* Cyberpunk Chart Backgrounds */
+  .chart-bg-purple {
+    @apply rounded-2xl p-6;
+    background: var(--glass-bg);
+    border: 1px solid hsl(280 100% 70% / 0.3);
+    box-shadow: var(--glow-purple);
+  }
+
+  .chart-bg-cyan {
+    @apply rounded-2xl p-6;
+    background: var(--glass-bg);
+    border: 1px solid hsl(190 100% 60% / 0.3);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .chart-bg-neon {
+    @apply rounded-2xl p-6;
+    background: var(--glass-bg);
+    border: 1px solid hsl(280 100% 70% / 0.2);
+    box-shadow: var(--glow-neon);
+  }
+
+  /* Legacy chart backgrounds */
+  .chart-bg-blue {
+    @apply chart-bg-cyan;
+  }
+
+  .chart-bg-green {
+    @apply chart-bg-cyan;
+  }
+
+  .chart-bg-dark {
+    @apply chart-bg-neon;
+  }
+
+  /* Cyberpunk Progress Bars */
+  .progress-purple {
+    @apply h-1 rounded-full;
+    background: var(--gradient-purple);
+    box-shadow: var(--glow-purple);
+  }
+
+  .progress-cyan {
+    @apply h-1 rounded-full;
+    background: var(--gradient-cyan);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .progress-neon {
+    @apply h-1 rounded-full;
+    background: var(--gradient-cyber);
+    box-shadow: var(--glow-neon);
+  }
+
+  /* Legacy progress bars */
+  .progress-blue {
+    @apply progress-cyan;
+  }
+
+  .progress-green {
+    @apply progress-cyan;
+  }
+
+  .progress-orange {
+    @apply progress-purple;
+  }
+}

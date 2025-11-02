@@ -1,0 +1,13 @@
+project_id = "xhvfyvkckqhalqhosisp"
+
+[functions.send-reminder-notifications]
+verify_jwt = true
+
+[functions.check-and-send-reminders]
+verify_jwt = false
+
+[functions.send-feature-request]
+verify_jwt = true
+
+[functions.send-weekly-newsletter]
+verify_jwt = false
