@@ -156,20 +156,20 @@ const CryptoNews = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       
       
-      <main className="py-12 px-6 bg-gradient-to-br from-orange-50 to-yellow-50 min-h-screen">
+      <main className="py-12 px-6 bg-background min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
-              <Bitcoin className="w-12 h-12 text-orange-600 mr-4" />
-              <h1 className="text-4xl md:text-5xl font-bold text-navy-900">
+              <Bitcoin className="w-12 h-12 text-primary mr-4" />
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
                 Crypto News
               </h1>
             </div>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Stay informed with comprehensive coverage of cryptocurrency market developments, updated daily
             </p>
           </div>
@@ -180,8 +180,8 @@ const CryptoNews = () => {
               onClick={() => setFilter('all')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'all' 
-                  ? 'bg-orange-600 text-white' 
-                  : 'bg-white text-orange-600 border border-orange-200 hover:bg-orange-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               <Filter className="w-4 h-4 inline mr-2" />
@@ -191,8 +191,8 @@ const CryptoNews = () => {
               onClick={() => setFilter('positive')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'positive' 
-                  ? 'bg-emerald-600 text-white' 
-                  : 'bg-white text-emerald-600 border border-emerald-200 hover:bg-emerald-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Positive Impact
@@ -201,8 +201,8 @@ const CryptoNews = () => {
               onClick={() => setFilter('negative')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'negative' 
-                  ? 'bg-red-600 text-white' 
-                  : 'bg-white text-red-600 border border-red-200 hover:bg-red-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Negative Impact
@@ -211,8 +211,8 @@ const CryptoNews = () => {
               onClick={() => setFilter('neutral')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'neutral' 
-                  ? 'bg-gray-600 text-white' 
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Neutral Impact
@@ -229,30 +229,30 @@ const CryptoNews = () => {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
                     {getImpactIcon(item.impact)}
-                    <span className="text-sm text-gray-600 ml-2">{item.time}</span>
+                    <span className="text-sm text-muted-foreground ml-2">{item.time}</span>
                   </div>
-                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {item.category}
                   </span>
                 </div>
                 
-                <h2 className="text-2xl font-bold text-navy-900 mb-3 leading-tight">
+                <h2 className="text-2xl font-bold text-foreground mb-3 leading-tight">
                   {item.headline}
                 </h2>
                 
-                <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {item.summary}
                 </p>
 
                 {expandedItems.has(item.id) && (
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                     {item.fullContent}
                   </p>
                 )}
                 
                 <button
                   onClick={() => toggleExpanded(item.id)}
-                  className="text-orange-600 hover:text-orange-700 font-medium text-sm flex items-center mb-4 transition-colors"
+                  className="text-primary hover:text-primary/90 font-medium text-sm flex items-center mb-4 transition-colors"
                 >
                   {expandedItems.has(item.id) ? (
                     <>
@@ -272,7 +272,7 @@ const CryptoNews = () => {
                     {item.cryptos.map((crypto) => (
                       <span 
                         key={crypto} 
-                        className="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs font-medium"
+                        className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium"
                       >
                         {crypto}
                       </span>
@@ -284,8 +284,8 @@ const CryptoNews = () => {
           </div>
 
           {/* Footer Note */}
-          <div className="text-center mt-12 pt-8 border-t border-gray-200">
-            <p className="text-gray-600">
+          <div className="text-center mt-12 pt-8 border-t border-border">
+            <p className="text-muted-foreground">
               Crypto news content updates daily • All times in Eastern Time
             </p>
           </div>

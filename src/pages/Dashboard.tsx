@@ -92,7 +92,7 @@ const Dashboard = () => {
   const isPositive = totalGainLoss >= 0;
 
   return (
-    <>
+    <div className="min-h-screen bg-background">
       <TwoFactorPromptDialog
         open={showTwoFactorPrompt}
         onOpenChange={setShowTwoFactorPrompt}
@@ -102,14 +102,14 @@ const Dashboard = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
-          <p className="text-slate-600 mt-1">
+          <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
+          <p className="text-muted-foreground mt-1">
             Welcome back, {user.user_metadata?.full_name || user.email?.split('@')[0]}! Here's your financial overview
           </p>
         </div>
         <Button
           onClick={sendTestNewsletter}
-          className="bg-blue-600 hover:bg-blue-700 text-white shadow-sm"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm"
           size="sm"
         >
           <Mail className="mr-2 h-4 w-4" />
@@ -119,8 +119,8 @@ const Dashboard = () => {
 
       {/* Net Worth Section */}
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-slate-900 flex items-center">
-          <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded mr-3"></div>
+        <h2 className="text-2xl font-bold text-foreground flex items-center">
+          <div className="h-1 w-12 bg-primary rounded mr-3"></div>
           Net Worth Overview
         </h2>
         <NetWorthSummary 
@@ -129,7 +129,7 @@ const Dashboard = () => {
           netWorth={netWorth}
         />
         
-        <Card className="bg-white border-slate-200 shadow-sm rounded-xl">
+        <Card className="bg-card border border-border shadow-sm rounded-xl">
           <CardContent className="p-6">
             <NetWorthCharts
               snapshots={snapshots}
@@ -143,11 +143,11 @@ const Dashboard = () => {
       {/* Investment Overview Section */}
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold text-slate-900 flex items-center">
-            <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded mr-3"></div>
+          <h2 className="text-2xl font-bold text-foreground flex items-center">
+            <div className="h-1 w-12 bg-primary rounded mr-3"></div>
             Investment Portfolio
           </h2>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-sm" size="sm" onClick={() => navigate('/investment')}>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm" size="sm" onClick={() => navigate('/investment')}>
             <BarChart3 className="mr-2 h-4 w-4" />
             View Details
           </Button>
@@ -317,18 +317,18 @@ const Dashboard = () => {
 
       {/* Budget Overview Section */}
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-slate-900 flex items-center">
-          <div className="h-1 w-12 bg-gradient-to-r from-amber-600 to-amber-400 rounded mr-3"></div>
+        <h2 className="text-2xl font-bold text-foreground flex items-center">
+          <div className="h-1 w-12 bg-primary rounded mr-3"></div>
           Budget Overview
         </h2>
-        <Card className="bg-white border-slate-200 shadow-sm rounded-xl">
+        <Card className="bg-card border border-border shadow-sm rounded-xl">
           <CardContent className="p-6">
             <BudgetSummary />
           </CardContent>
         </Card>
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

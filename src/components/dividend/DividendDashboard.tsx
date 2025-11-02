@@ -151,13 +151,13 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Annual Dividend Income</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Annual Dividend Income</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
               ${portfolioMetrics.annualDividendIncome.toLocaleString()}
             </div>
-            <div className="text-xs text-gray-500 mt-1">
+            <div className="text-xs text-muted-foreground mt-1">
               Yield: {portfolioMetrics.dividendYield.toFixed(2)}%
             </div>
           </CardContent>
@@ -165,7 +165,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Monthly</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Monthly</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">
@@ -176,7 +176,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Weekly</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Weekly</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-purple-600">
@@ -187,7 +187,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Daily</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Daily</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-orange-600">
@@ -198,7 +198,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Hourly</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Hourly</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-indigo-600">
@@ -212,13 +212,13 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Total Holdings Value</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Total Holdings Value</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">
               ${portfolioMetrics.totalHoldingsValue.toLocaleString()}
             </div>
-            <div className="text-xs text-gray-500 mt-1">
+            <div className="text-xs text-muted-foreground mt-1">
               Invested: ${portfolioMetrics.totalInvestedCapital.toLocaleString()}
             </div>
           </CardContent>
@@ -226,13 +226,13 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Net Profit/Loss</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Net Profit/Loss</CardTitle>
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${portfolioMetrics.netProfitLoss >= 0 ? 'text-green-600' : 'text-red-600'}`}>
               {portfolioMetrics.netProfitLoss >= 0 ? '+' : ''}${portfolioMetrics.netProfitLoss.toLocaleString()}
             </div>
-            <div className="text-xs text-gray-500 mt-1">
+            <div className="text-xs text-muted-foreground mt-1">
               {((portfolioMetrics.netProfitLoss / portfolioMetrics.totalInvestedCapital) * 100).toFixed(1)}% return
             </div>
           </CardContent>
@@ -240,13 +240,13 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
 
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">Portfolio Yield</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Portfolio Yield</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
               {portfolioMetrics.dividendYield.toFixed(2)}%
             </div>
-            <div className="text-xs text-gray-500 mt-1">
+            <div className="text-xs text-muted-foreground mt-1">
               Annual dividend yield
             </div>
           </CardContent>
@@ -267,22 +267,22 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
             {todaysDividends.length > 0 ? (
               <div className="space-y-3">
                 {todaysDividends.map((dividend, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                  <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg border border-border">
                     <div>
                       <div className="font-medium">{dividend.company}</div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         {dividend.shares} shares • {dividend.yield}% yield
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="font-bold text-green-600">${dividend.amount}</div>
-                      <div className="text-xs text-gray-500">{dividend.symbol}</div>
+                      <div className="text-xs text-muted-foreground">{dividend.symbol}</div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-6 text-gray-500">
+              <div className="text-center py-6 text-muted-foreground">
                 No dividend payments received today
               </div>
             )}
@@ -302,10 +302,10 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
             {recentDividendChanges.length > 0 ? (
               <div className="space-y-3">
                 {recentDividendChanges.map((change, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg border border-border">
                     <div>
                       <div className="font-medium">{change.symbol}</div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         ${change.oldPayout.toFixed(2)} → ${change.newPayout.toFixed(2)}
                       </div>
                     </div>
@@ -323,7 +323,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-6 text-gray-500">
+              <div className="text-center py-6 text-muted-foreground">
                 No recent dividend changes in your portfolio
               </div>
             )}
@@ -347,7 +347,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                 <BarChart data={monthlyForecast}>
                   <XAxis dataKey="month" />
                   <YAxis />
-                  <Bar dataKey="income" fill="#3B82F6" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="income" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -377,14 +377,14 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
           </CardHeader>
           <CardContent className="text-center">
             <div className="relative w-32 h-32 mx-auto mb-4">
-              <div className="w-32 h-32 rounded-full border-8 border-gray-200"></div>
+              <div className="w-32 h-32 rounded-full border-8 border-border"></div>
               <div 
-                className="absolute top-0 left-0 w-32 h-32 rounded-full border-8 border-green-500 transform -rotate-90"
+                className="absolute top-0 left-0 w-32 h-32 rounded-full border-8 border-primary transform -rotate-90"
                 style={{
                   borderRightColor: 'transparent',
                   borderBottomColor: 'transparent',
-                  borderLeftColor: goalProgress > 50 ? '#10B981' : 'transparent',
-                  borderTopColor: '#10B981',
+                  borderLeftColor: goalProgress > 50 ? 'hsl(var(--primary))' : 'transparent',
+                  borderTopColor: 'hsl(var(--primary))',
                   clipPath: `polygon(50% 50%, 50% 0%, ${50 + Math.min(goalProgress, 50)}% 0%, ${goalProgress > 50 ? '100%' : '50%'} ${goalProgress > 50 ? '0%' : '50%'}, ${goalProgress > 50 ? '100%' : '50%'} ${goalProgress > 50 ? Math.min(goalProgress - 50, 50) + '%' : '50%'}, 50% 50%)`
                 }}
               ></div>
@@ -398,7 +398,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
               {isEditingGoal ? (
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-gray-600">Annual Goal: $</span>
+                    <span className="text-sm text-muted-foreground">Annual Goal: $</span>
                     <Input
                       type="number"
                       value={tempGoal}
@@ -421,7 +421,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                 </div>
               ) : (
                 <>
-                  <div className="text-sm text-gray-600">Annual Goal: ${annualGoal.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground">Annual Goal: ${annualGoal.toLocaleString()}</div>
                   <div className="text-lg font-semibold">
                     ${portfolioMetrics.annualDividendIncome.toFixed(2)} / ${annualGoal.toLocaleString()}
                   </div>
@@ -447,10 +447,10 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
             {topGainersLosers.gainers.length > 0 ? (
               <div className="space-y-3">
                 {topGainersLosers.gainers.map((gainer, index) => (
-                  <div key={gainer.id} className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                  <div key={gainer.id} className="flex items-center justify-between p-3 bg-muted rounded-lg border border-border">
                     <div>
                       <div className="font-medium">{gainer.symbol}</div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         Yield: {gainer.dividend_yield.toFixed(2)}%
                       </div>
                     </div>
@@ -459,7 +459,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                         <ArrowUp size={16} />
                         <span className="font-bold">+{gainer.change.toFixed(1)}%</span>
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         ${gainer.valueChange.toFixed(2)}
                       </div>
                     </div>
@@ -467,7 +467,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-6 text-gray-500">
+              <div className="text-center py-6 text-muted-foreground">
                 No gainers in your portfolio
               </div>
             )}
@@ -486,10 +486,10 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
             {topGainersLosers.losers.length > 0 ? (
               <div className="space-y-3">
                 {topGainersLosers.losers.map((loser, index) => (
-                  <div key={loser.id} className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                  <div key={loser.id} className="flex items-center justify-between p-3 bg-muted rounded-lg border border-border">
                     <div>
                       <div className="font-medium">{loser.symbol}</div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         Yield: {loser.dividend_yield.toFixed(2)}%
                       </div>
                     </div>
@@ -498,7 +498,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                         <ArrowDown size={16} />
                         <span className="font-bold">{loser.change.toFixed(1)}%</span>
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-muted-foreground">
                         ${loser.valueChange.toFixed(2)}
                       </div>
                     </div>
@@ -506,7 +506,7 @@ const DividendDashboard = ({ holdings }: DividendDashboardProps) => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-6 text-gray-500">
+              <div className="text-center py-6 text-muted-foreground">
                 No losers in your portfolio
               </div>
             )}
