@@ -163,18 +163,18 @@ const RealEstateNews = () => {
       case 'negative':
         return <TrendingDown className="w-5 h-5 text-red-600" />;
       default:
-        return <Building className="w-5 h-5 text-gray-600" />;
+        return <Building className="w-5 h-5 text-muted-foreground" />;
     }
   };
 
   const getImpactColor = (impact: string) => {
     switch (impact) {
       case 'positive':
-        return 'border-l-emerald-500 bg-emerald-50 hover:bg-emerald-100';
+        return 'border-l-emerald-500';
       case 'negative':
-        return 'border-l-red-500 bg-red-50 hover:bg-red-100';
+        return 'border-l-red-500';
       default:
-        return 'border-l-gray-500 bg-gray-50 hover:bg-gray-100';
+        return 'border-l-secondary';
     }
   };
 
@@ -244,12 +244,12 @@ const RealEstateNews = () => {
             {filteredNews.map((item) => (
               <article 
                 key={item.id} 
-                className={`border-l-4 rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${getImpactColor(item.impact)}`}
+                className={`border-l-4 bg-card border border-border rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${getImpactColor(item.impact)}`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
                     {getImpactIcon(item.impact)}
-                    <span className="text-sm text-gray-600 ml-2">{item.time}</span>
+                    <span className="text-sm text-muted-foreground ml-2">{item.time}</span>
                   </div>
                   <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {item.category}
@@ -261,22 +261,22 @@ const RealEstateNews = () => {
                 </h2>
 
                 <div className="flex items-center gap-4 mb-3">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-muted-foreground">
                     <MapPin className="w-4 h-4 mr-1" />
                     {item.location}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-muted-foreground">
                     <Building className="w-4 h-4 mr-1" />
                     {item.propertyType}
                   </div>
                 </div>
                 
-                <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {item.summary}
                 </p>
 
                 {expandedItems.has(item.id) && (
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                     {item.fullContent}
                   </p>
                 )}
@@ -306,7 +306,7 @@ const RealEstateNews = () => {
 
           {/* More News Coming Soon */}
           <div className="mt-12 text-center">
-            <p className="text-gray-600 text-lg">
+            <p className="text-muted-foreground text-lg">
               Real estate market updates refresh daily. Check back for the latest industry news and analysis.
             </p>
           </div>

@@ -139,18 +139,18 @@ const News = () => {
       case 'negative':
         return <TrendingDown className="w-5 h-5 text-red-500" />;
       default:
-        return <Calendar className="w-5 h-5 text-gray-500" />;
+        return <Calendar className="w-5 h-5 text-muted-foreground" />;
     }
   };
 
   const getImpactColor = (impact: string) => {
     switch (impact) {
       case 'positive':
-        return 'border-l-emerald-500 bg-emerald-50 hover:bg-emerald-100';
+        return 'border-l-emerald-500';
       case 'negative':
-        return 'border-l-red-500 bg-red-50 hover:bg-red-100';
+        return 'border-l-red-500';
       default:
-        return 'border-l-gray-500 bg-gray-50 hover:bg-gray-100';
+        return 'border-l-secondary';
     }
   };
 
@@ -220,12 +220,12 @@ const News = () => {
             {filteredNews.map((item) => (
               <article 
                 key={item.id} 
-                className={`border-l-4 rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${getImpactColor(item.impact)}`}
+                className={`border-l-4 bg-card border border-border rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${getImpactColor(item.impact)}`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
                     {getImpactIcon(item.impact)}
-                    <span className="text-sm text-gray-600 ml-2">{item.time}</span>
+                    <span className="text-sm text-muted-foreground ml-2">{item.time}</span>
                   </div>
                   <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {item.category}
@@ -246,7 +246,7 @@ const News = () => {
                 </p>
 
                 {expandedItems.has(item.id) && (
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed animate-fade-in">
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed animate-fade-in">
                     {item.fullContent}
                   </p>
                 )}

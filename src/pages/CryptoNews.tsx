@@ -147,11 +147,11 @@ const CryptoNews = () => {
   const getImpactColor = (impact: string) => {
     switch (impact) {
       case 'positive':
-        return 'border-l-emerald-500 bg-emerald-50 hover:bg-emerald-100';
+        return 'border-l-emerald-500';
       case 'negative':
-        return 'border-l-red-500 bg-red-50 hover:bg-red-100';
+        return 'border-l-red-500';
       default:
-        return 'border-l-gray-500 bg-gray-50 hover:bg-gray-100';
+        return 'border-l-secondary';
     }
   };
 
