@@ -220,11 +220,11 @@ const Dashboard = () => {
       {properties.length > 0 && (
         <div className="space-y-6">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold text-slate-900 flex items-center">
-              <div className="h-1 w-12 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded mr-3"></div>
+            <h2 className="text-2xl font-bold text-foreground flex items-center">
+              <div className="h-1 w-12 bg-primary rounded mr-3"></div>
               Real Estate Portfolio
             </h2>
-            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm" size="sm" onClick={() => navigate('/real-estate')}>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm" size="sm" onClick={() => navigate('/real-estate')}>
               <Home className="mr-2 h-4 w-4" />
               View All
             </Button>
@@ -232,7 +232,7 @@ const Dashboard = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {properties.slice(0, 3).map((property) => (
-              <Card key={property.id} className="bg-white border-slate-200 shadow-sm rounded-xl hover:shadow-md transition-shadow">
+              <Card key={property.id} className="bg-card border border-border shadow-sm rounded-xl hover:shadow-md transition-shadow">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center space-x-2">
