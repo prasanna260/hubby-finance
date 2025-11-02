@@ -33,15 +33,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="glass border-b border-border/50 py-4 px-6 md:px-10 lg:px-20 sticky top-0 z-50">
+    <nav className="bg-background border-b border-border py-4 px-6 md:px-10 lg:px-20 sticky top-0 z-50">
       <div className="mx-auto max-w-7xl">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
-              <div className="w-8 h-8 cyber-gradient rounded-lg flex items-center justify-center text-white font-bold glow-purple transition-all duration-300 group-hover:glow-neon">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold bg-primary/20 text-primary">
                 M
               </div>
-              <span className="text-foreground font-bold text-xl neon-text-purple">Mite Fi</span>
+              <span className="text-foreground font-bold text-xl">Mite Fi</span>
             </Link>
           </div>
 
@@ -49,16 +49,16 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {!user && (
               <>
-                <Link to="/features" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:neon-text-purple">Features</Link>
-                <Link to="/calculator" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:neon-text-purple">Calculator</Link>
-                <Link to="/blog" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:neon-text-purple">Blog</Link>
+                <Link to="/features" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">Features</Link>
+                <Link to="/calculator" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">Calculator</Link>
+                <Link to="/blog" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">Blog</Link>
                 
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:neon-text-purple">
+                  <DropdownMenuTrigger className="flex items-center text-muted-foreground hover:text-primary font-medium transition-colors duration-200">
                     News
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="glass border-border">
+                  <DropdownMenuContent className="bg-card border border-border">
                     <DropdownMenuItem asChild>
                       <Link to="/news" className="w-full hover:text-primary">Market News</Link>
                     </DropdownMenuItem>
@@ -71,8 +71,8 @@ const Navbar = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 
-                <Link to="/roadmap" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:neon-text-purple">Roadmap</Link>
-                <Link to="#" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:neon-text-purple">About Us</Link>
+                <Link to="/roadmap" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">Roadmap</Link>
+                <Link to="#" className="text-muted-foreground hover:text-primary font-medium transition-colors duration-200">About Us</Link>
               </>
             )}
             
@@ -86,7 +86,7 @@ const Navbar = () => {
                         {user.user_metadata?.full_name || user.email}
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent className="glass border-border">
+                      <DropdownMenuContent className="bg-card border border-border">
                         <DropdownMenuItem onClick={handleSignOut} className="text-red-400 hover:text-red-300">
                           <LogOut className="mr-2 h-4 w-4" />
                           Sign Out
@@ -97,11 +97,11 @@ const Navbar = () => {
                 <>
                   <Dialog open={isLoginDialogOpen} onOpenChange={setIsLoginDialogOpen}>
                     <DialogTrigger asChild>
-                      <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 hover:border-primary neon-border-purple">Login</Button>
+                      <Button variant="outline" className="border border-input bg-background hover:bg-accent hover:text-accent-foreground">Login</Button>
                     </DialogTrigger>
-                    <DialogContent className="glass border-border">
+                    <DialogContent className="bg-card border border-border">
                       <DialogHeader>
-                        <DialogTitle className="neon-text-purple">Welcome to Mite Fi</DialogTitle>
+                        <DialogTitle className="">Welcome to Mite Fi</DialogTitle>
                         <DialogDescription>
                           Access your dividend tracker and financial tools
                         </DialogDescription>
@@ -113,7 +113,7 @@ const Navbar = () => {
                   </Dialog>
                   
                   <Link to="/sign-up">
-                    <Button className="cyber-gradient glow-purple hover:glow-neon transition-all duration-300">Sign Up</Button>
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300">Sign Up</Button>
                   </Link>
                 </>
               )
@@ -166,11 +166,11 @@ const Navbar = () => {
                     <>
                       <Dialog open={isLoginDialogOpen} onOpenChange={setIsLoginDialogOpen}>
                         <DialogTrigger asChild>
-                          <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 neon-border-purple w-full">Login</Button>
+                          <Button variant="outline" className="border border-input bg-background hover:bg-accent hover:text-accent-foreground w-full">Login</Button>
                         </DialogTrigger>
-                        <DialogContent className="glass border-border">
+                        <DialogContent className="bg-card border border-border">
                           <DialogHeader>
-                            <DialogTitle className="neon-text-purple">Welcome to Mite Fi</DialogTitle>
+                            <DialogTitle className="">Welcome to Mite Fi</DialogTitle>
                             <DialogDescription>
                               Access your dividend tracker and financial tools
                             </DialogDescription>
@@ -181,7 +181,7 @@ const Navbar = () => {
                         </DialogContent>
                       </Dialog>
                       <Link to="/sign-up" className="w-full">
-                        <Button className="cyber-gradient glow-purple hover:glow-neon transition-all duration-300 w-full">Sign Up</Button>
+                        <Button className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 w-full">Sign Up</Button>
                       </Link>
                     </>
                   )

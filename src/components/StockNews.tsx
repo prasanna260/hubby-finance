@@ -127,15 +127,12 @@ const StockNews = () => {
 
   return (
     <section className="py-12 px-6 bg-background relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 cyber-grid opacity-10"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
             <Newspaper className="w-8 h-8 text-primary mr-3" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground gradient-text">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Today's Market News
             </h2>
           </div>
@@ -148,7 +145,7 @@ const StockNews = () => {
           {news.map((item) => (
             <div 
               key={item.id} 
-              className={`border-l-4 glass rounded-lg p-6 transition-all duration-300 hover:glow-neon ${getImpactColor(item.impact)}`}
+              className={`border-l-4 bg-card border border-border rounded-lg p-6 transition-all duration-300 ${getImpactColor(item.impact)}`}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center">
@@ -161,7 +158,7 @@ const StockNews = () => {
                 to={`/news/${item.id}`}
                 className="hover:underline"
               >
-                <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight hover:text-primary neon-text-purple transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight hover:text-primary transition-colors duration-200">
                   {item.headline}
                 </h3>
               </Link>
@@ -175,7 +172,7 @@ const StockNews = () => {
                   {item.stocks.map((stock) => (
                     <span 
                       key={stock} 
-                      className="glass border border-primary/30 text-primary px-3 py-1 rounded-full text-xs font-medium"
+                      className="bg-muted text-muted-foreground border border-border px-3 py-1 rounded-full text-xs font-medium"
                     >
                       {stock}
                     </span>
@@ -183,7 +180,7 @@ const StockNews = () => {
                 </div>
                 <Link 
                   to={`/news/${item.id}`}
-                  className="text-xs text-primary hover:text-secondary hover:underline transition-colors duration-200"
+                  className="text-xs text-primary hover:underline transition-colors duration-200"
                 >
                   Read full article →
                 </Link>
@@ -195,7 +192,7 @@ const StockNews = () => {
         <div className="text-center mt-8">
           <Link 
             to="/news" 
-            className="inline-flex items-center cyber-gradient text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 glow-purple hover:glow-neon"
+            className="inline-flex items-center bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-all duration-300"
           >
             View All News
             <ArrowRight className="w-4 h-4 ml-2" />

@@ -16,7 +16,7 @@ const SignUp = () => {
   }, [user, navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <Card className="shadow-xl">
           <CardHeader className="space-y-1">
@@ -31,7 +31,7 @@ const SignUp = () => {
           <div className="px-6 py-4 border-t border-gray-100">
             <div className="text-sm text-center text-gray-600">
               Already have an account?{' '}
-              <Link to="/login" className="text-blue-600 hover:text-blue-700 font-medium">
+              <Link to="/login" className="text-primary hover:text-primary/90 font-medium">
                 Login
               </Link>
             </div>

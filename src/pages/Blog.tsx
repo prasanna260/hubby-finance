@@ -115,14 +115,14 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Financial Insights & Strategies
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Expert advice, tips, and strategies to help you achieve financial freedom
           </p>
         </div>
@@ -134,7 +134,7 @@ const Blog = () => {
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className={selectedCategory === category ? "bg-navy-700 hover:bg-navy-800" : ""}
+              className={selectedCategory === category ? "bg-primary hover:bg-primary/90" : "border border-border"}
             >
               {category}
             </Button>
@@ -159,17 +159,17 @@ const Blog = () => {
                     {post.category}
                   </Badge>
                 </div>
-                <CardTitle className="text-xl hover:text-navy-700 transition-colors">
+                <CardTitle className="text-xl hover:text-primary transition-colors">
                   <Link to={`/blog/${post.id}`}>
                     {post.title}
                   </Link>
                 </CardTitle>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-sm text-muted-foreground">
                   {post.excerpt}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     {new Date(post.date).toLocaleDateString('en-US', { 
@@ -201,16 +201,16 @@ const Blog = () => {
         </div>
 
         {/* Featured Section */}
-        <Card className="bg-gradient-to-r from-navy-700 to-navy-900 text-white">
+        <Card className="bg-card border border-border">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl mb-2">Stay Updated</CardTitle>
-            <CardDescription className="text-gray-200">
+            <CardTitle className="text-3xl mb-2 text-foreground">Stay Updated</CardTitle>
+            <CardDescription className="text-muted-foreground">
               Subscribe to our newsletter for weekly financial insights and tips
             </CardDescription>
           </CardHeader>
           <CardContent className="flex justify-center">
             <Link to="/newsletter">
-              <Button variant="secondary" size="lg">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90" size="lg">
                 Subscribe to Newsletter
               </Button>
             </Link>

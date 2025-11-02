@@ -179,18 +179,18 @@ const RealEstateNews = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <main className="py-12 px-6 bg-gradient-to-br from-blue-50 to-green-50 min-h-screen">
+    <div className="min-h-screen bg-background">
+      <main className="py-12 px-6 bg-background min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
-              <Home className="w-12 h-12 text-blue-600 mr-4" />
-              <h1 className="text-4xl md:text-5xl font-bold text-navy-900">
+              <Home className="w-12 h-12 text-primary mr-4" />
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
                 Real Estate News
               </h1>
             </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Latest updates, market trends, and insights from the real estate industry
             </p>
           </div>
@@ -201,8 +201,8 @@ const RealEstateNews = () => {
               onClick={() => setFilter('all')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'all' 
-                  ? 'bg-navy-600 text-white' 
-                  : 'bg-white text-navy-600 border border-navy-200 hover:bg-navy-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               All News
@@ -211,8 +211,8 @@ const RealEstateNews = () => {
               onClick={() => setFilter('positive')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'positive' 
-                  ? 'bg-emerald-600 text-white' 
-                  : 'bg-white text-emerald-600 border border-emerald-200 hover:bg-emerald-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Positive Impact
@@ -221,8 +221,8 @@ const RealEstateNews = () => {
               onClick={() => setFilter('negative')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'negative' 
-                  ? 'bg-red-600 text-white' 
-                  : 'bg-white text-red-600 border border-red-200 hover:bg-red-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Negative Impact
@@ -231,8 +231,8 @@ const RealEstateNews = () => {
               onClick={() => setFilter('neutral')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'neutral' 
-                  ? 'bg-gray-600 text-white' 
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Neutral Impact
@@ -251,12 +251,12 @@ const RealEstateNews = () => {
                     {getImpactIcon(item.impact)}
                     <span className="text-sm text-gray-600 ml-2">{item.time}</span>
                   </div>
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {item.category}
                   </span>
                 </div>
                 
-                <h2 className="text-2xl font-bold text-navy-900 mb-3 leading-tight">
+                <h2 className="text-2xl font-bold text-foreground mb-3 leading-tight">
                   {item.headline}
                 </h2>
 
@@ -283,7 +283,7 @@ const RealEstateNews = () => {
                 
                 <button
                   onClick={() => toggleExpanded(item.id)}
-                  className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center mb-4 transition-colors"
+                  className="text-primary hover:text-primary/90 font-medium text-sm flex items-center mb-4 transition-colors"
                 >
                   {expandedItems.has(item.id) ? (
                     <>

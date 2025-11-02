@@ -155,17 +155,17 @@ const News = () => {
   };
 
   return (
-    <main className="py-12 px-6 bg-gradient-to-br from-navy-50 to-gray-50 min-h-screen">
+    <main className="py-12 px-6 bg-background min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
-              <Newspaper className="w-12 h-12 text-navy-700 mr-4" />
-              <h1 className="text-4xl md:text-5xl font-bold text-navy-900">
+              <Newspaper className="w-12 h-12 text-primary mr-4" />
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
                 Market News
               </h1>
             </div>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Stay informed with comprehensive coverage of US stock market developments, updated daily
             </p>
           </div>
@@ -176,8 +176,8 @@ const News = () => {
               onClick={() => setFilter('all')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'all' 
-                  ? 'bg-navy-700 text-white' 
-                  : 'bg-white text-navy-700 border border-navy-200 hover:bg-navy-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               <Filter className="w-4 h-4 inline mr-2" />
@@ -187,8 +187,8 @@ const News = () => {
               onClick={() => setFilter('positive')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'positive' 
-                  ? 'bg-emerald-600 text-white' 
-                  : 'bg-white text-emerald-600 border border-emerald-200 hover:bg-emerald-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Positive Impact
@@ -197,8 +197,8 @@ const News = () => {
               onClick={() => setFilter('negative')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'negative' 
-                  ? 'bg-red-600 text-white' 
-                  : 'bg-white text-red-600 border border-red-200 hover:bg-red-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Negative Impact
@@ -207,8 +207,8 @@ const News = () => {
               onClick={() => setFilter('neutral')}
               className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                 filter === 'neutral' 
-                  ? 'bg-gray-600 text-white' 
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-background text-foreground border border-border hover:bg-accent'
               }`}
             >
               Neutral Impact
@@ -227,7 +227,7 @@ const News = () => {
                     {getImpactIcon(item.impact)}
                     <span className="text-sm text-gray-600 ml-2">{item.time}</span>
                   </div>
-                  <span className="bg-navy-100 text-navy-700 px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {item.category}
                   </span>
                 </div>
@@ -236,12 +236,12 @@ const News = () => {
                   to={`/news/${item.id}`}
                   className="hover:underline"
                 >
-                  <h2 className="text-2xl font-bold text-navy-900 mb-3 leading-tight hover:text-navy-700">
+                  <h2 className="text-2xl font-bold text-foreground mb-3 leading-tight hover:text-primary">
                     {item.headline}
                   </h2>
                 </Link>
                 
-                <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {item.summary}
                 </p>
 
@@ -254,7 +254,7 @@ const News = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <button
                     onClick={() => toggleExpanded(item.id)}
-                    className="flex items-center text-navy-600 hover:text-navy-800 font-medium text-sm transition-colors duration-200"
+                    className="flex items-center text-foreground hover:text-primary font-medium text-sm transition-colors duration-200"
                   >
                     {expandedItems.has(item.id) ? (
                       <>
@@ -270,7 +270,7 @@ const News = () => {
                   </button>
                   <Link 
                     to={`/news/${item.id}`}
-                    className="text-xs text-navy-600 hover:text-navy-800 hover:underline"
+                    className="text-xs text-primary hover:text-primary/90 hover:underline"
                   >
                     View full article →
                   </Link>
@@ -281,7 +281,7 @@ const News = () => {
                     {item.stocks.map((stock) => (
                       <span 
                         key={stock} 
-                        className="bg-navy-200 text-navy-800 px-3 py-1 rounded-full text-xs font-medium"
+                        className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium"
                       >
                         {stock}
                       </span>
@@ -293,8 +293,8 @@ const News = () => {
           </div>
 
           {/* Footer Note */}
-          <div className="text-center mt-12 pt-8 border-t border-gray-200">
-            <p className="text-gray-600">
+          <div className="text-center mt-12 pt-8 border-t border-border">
+            <p className="text-muted-foreground">
               News content updates daily at market close • All times in Eastern Time
             </p>
           </div>

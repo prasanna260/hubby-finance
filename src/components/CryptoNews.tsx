@@ -127,15 +127,12 @@ const CryptoNews = () => {
 
   return (
     <section className="py-12 px-6 bg-background relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 cyber-grid opacity-10"></div>
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
             <Bitcoin className="w-8 h-8 text-secondary mr-3" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground gradient-cyan-text">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Today's Crypto News
             </h2>
           </div>
@@ -148,7 +145,7 @@ const CryptoNews = () => {
           {news.map((item) => (
             <div 
               key={item.id} 
-              className={`border-l-4 glass rounded-lg p-6 transition-all duration-300 hover:glow-cyan ${getImpactColor(item.impact)}`}
+              className={`border-l-4 bg-card border border-border rounded-lg p-6 transition-all duration-300 ${getImpactColor(item.impact)}`}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center">
@@ -161,12 +158,12 @@ const CryptoNews = () => {
                 to={`/crypto-news/${item.id}`}
                 className="hover:underline"
               >
-                <h3 className="text-xl font-semibold text-navy-900 mb-3 leading-tight hover:text-navy-700">
+                <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight hover:text-primary">
                   {item.headline}
                 </h3>
               </Link>
               
-              <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                 {item.summary}
               </p>
               
@@ -175,7 +172,7 @@ const CryptoNews = () => {
                   {item.cryptos.map((crypto) => (
                     <span 
                       key={crypto} 
-                      className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium"
+                      className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium"
                     >
                       {crypto}
                     </span>
@@ -183,7 +180,7 @@ const CryptoNews = () => {
                 </div>
                 <Link 
                   to={`/crypto-news/${item.id}`}
-                  className="text-xs text-orange-600 hover:text-orange-700 hover:underline"
+                  className="text-xs text-primary hover:text-primary/90 hover:underline"
                 >
                   Read full article →
                 </Link>
@@ -195,12 +192,12 @@ const CryptoNews = () => {
         <div className="text-center mt-8">
           <Link 
             to="/crypto-news" 
-            className="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+            className="inline-flex items-center bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors duration-200"
           >
             View All Crypto News
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
-          <p className="text-sm text-gray-600 mt-4">
+          <p className="text-sm text-muted-foreground mt-4">
             Crypto updates daily • Get real-time alerts with our app
           </p>
         </div>

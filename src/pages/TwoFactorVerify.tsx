@@ -120,9 +120,9 @@ const TwoFactorVerify = () => {
 
   if (sessionExpired) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="w-full max-w-md">
-          <Card className="shadow-xl border-red-200">
+          <Card className="shadow-xl">
             <CardHeader className="space-y-1">
               <CardTitle className="text-2xl font-bold text-center text-red-600">
                 Session Expired
@@ -152,15 +152,14 @@ const TwoFactorVerify = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <Card className="shadow-xl">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-center mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-blue-100 rounded-full blur-md"></div>
-                <div className="relative bg-blue-600 p-3 rounded-full">
-                  <Shield className="h-6 w-6 text-white" />
+                <div className="relative bg-primary/20 p-3 rounded-full">
+                  <Shield className="h-6 w-6 text-primary" />
                 </div>
               </div>
             </div>
@@ -174,29 +173,17 @@ const TwoFactorVerify = () => {
           <CardContent>
             <div className="mb-6">
               <div
-                className={`flex items-center justify-center gap-2 p-3 rounded-lg ${
-                  isTimeRunningOut
-                    ? 'bg-red-50 border border-red-200'
-                    : 'bg-blue-50 border border-blue-200'
-                }`}
+                className={`flex items-center justify-center gap-2 p-3 rounded-lg bg-muted border border-border`}
               >
                 <Clock
-                  className={`h-5 w-5 ${
-                    isTimeRunningOut ? 'text-red-600' : 'text-blue-600'
-                  }`}
+                  className={`h-5 w-5 text-foreground`}
                 />
                 <span
-                  className={`font-mono font-semibold ${
-                    isTimeRunningOut ? 'text-red-600' : 'text-blue-600'
-                  }`}
+                  className={`font-mono font-semibold text-foreground`}
                 >
                   {minutes}:{seconds.toString().padStart(2, '0')}
                 </span>
-                <span
-                  className={`text-sm ${
-                    isTimeRunningOut ? 'text-red-600' : 'text-blue-600'
-                  }`}
-                >
+                <span className={`text-sm text-foreground`}>
                   Time remaining
                 </span>
               </div>

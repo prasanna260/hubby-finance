@@ -103,7 +103,7 @@ const StockTicker = () => {
 
   if (loading) {
     return (
-      <div className="bg-gradient-to-r from-navy-900 to-navy-800 text-white py-4">
+      <div className="bg-card border-b border-border text-foreground py-4">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-sm">Loading market data...</p>
         </div>
@@ -119,18 +119,18 @@ const StockTicker = () => {
   }
 
   return (
-    <div className="bg-gradient-to-r from-navy-900 to-navy-800 text-white py-4 overflow-hidden">
+    <div className="bg-card border-b border-border text-foreground py-4 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-2">
-          <h3 className="text-sm font-semibold text-gold-400">Live Market Updates</h3>
-          <div className="text-xs text-gray-300">
+          <h3 className="text-sm font-semibold">Live Market Updates</h3>
+          <div className="text-xs text-muted-foreground">
             Updates every 5 minutes • Real-time data via Alpha Vantage
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {displayedStocks.map((stock) => (
-            <div key={stock.symbol} className="bg-navy-800/50 rounded-lg p-3 border border-navy-700">
+            <div key={stock.symbol} className="bg-muted rounded-lg p-3 border border-border">
               <div className="flex items-center justify-between mb-1">
                 <span className="font-bold text-sm">{stock.symbol}</span>
                 <div className={`flex items-center text-xs ${

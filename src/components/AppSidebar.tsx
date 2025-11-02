@@ -43,8 +43,8 @@ export function AppSidebar() {
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive
-      ? "bg-slate-800 font-semibold text-sky-300"
-      : "hover:bg-white text-sky-300 hover:text-black";
+      ? "bg-card font-semibold text-foreground"
+      : "hover:bg-muted text-foreground hover:text-primary";
 
   const getUserInitials = () => {
     if (user?.user_metadata?.full_name) {
@@ -62,22 +62,22 @@ export function AppSidebar() {
     <Sidebar
       variant="sidebar"
       collapsible="icon"
-      className="bg-slate-900 border-r border-slate-800"
+      className="bg-card border-r border-border"
     >
       {/* User Profile Section */}
-      <div className="p-4 border-b border-slate-800 bg-slate-900">
-        <div className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50">
-          <Avatar className="h-10 w-10" style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' }}>
-            <AvatarFallback className="text-white font-semibold" style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' }}>
+      <div className="p-4 border-b border-border bg-card">
+        <div className="flex items-center gap-3 p-2 rounded-lg bg-muted/50">
+          <Avatar className="h-10 w-10">
+            <AvatarFallback className="font-semibold bg-primary text-primary-foreground">
               {getUserInitials()}
             </AvatarFallback>
           </Avatar>
           {open && (
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold truncate text-white">
+              <p className="text-sm font-semibold truncate text-foreground">
                 {user?.user_metadata?.full_name || 'User'}
               </p>
-              <p className="text-xs text-slate-400 truncate">
+              <p className="text-xs text-muted-foreground truncate">
                 {user?.email}
               </p>
             </div>
@@ -85,9 +85,9 @@ export function AppSidebar() {
         </div>
       </div>
 
-      <SidebarContent className="bg-slate-900">
+      <SidebarContent className="bg-card">
         <SidebarGroup>
-          <SidebarGroupLabel className="text-xs font-semibold text-sky-400 uppercase tracking-wider px-3 py-2">Financial Tools</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2">Financial Tools</SidebarGroupLabel>
 
           <SidebarGroupContent>
             <SidebarMenu>
@@ -99,8 +99,8 @@ export function AppSidebar() {
                       end
                       className={({ isActive }) => `flex items-center px-3 py-2 rounded-lg transition-colors group ${getNavCls({ isActive })}`}
                     >
-                      <item.icon className="mr-3 h-5 w-5 text-sky-300 group-hover:text-sky-500 transition-colors" style={{ color: isActive(item.url) ? '#3b82f6' : undefined }} />
-                      <span className="text-sm font-medium text-sky-500">{item.title}</span>
+                      <item.icon className="mr-3 h-5 w-5 text-foreground group-hover:text-primary transition-colors" />
+                      <span className="text-sm font-medium text-foreground">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -110,7 +110,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       
-      <SidebarFooter className="bg-slate-900 border-t border-slate-800">
+      <SidebarFooter className="bg-card border-t border-border">
         <SidebarMenu>
           {bottomItems.map((item) => (
             <SidebarMenuItem key={item.title}>
@@ -120,8 +120,8 @@ export function AppSidebar() {
                   end
                   className={({ isActive }) => `flex items-center px-3 py-2 rounded-lg transition-colors group ${getNavCls({ isActive })}`}
                 >
-                  <item.icon className="mr-3 h-5 w-5 text-white group-hover:text-sky-500 transition-colors" style={{ color: isActive(item.url) ? '#3b82f6' : undefined }} />
-                  <span className="text-sm font-medium text-sky-500">{item.title}</span>
+                  <item.icon className="mr-3 h-5 w-5 text-foreground group-hover:text-primary transition-colors" />
+                  <span className="text-sm font-medium text-foreground">{item.title}</span>
                 </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>

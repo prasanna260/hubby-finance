@@ -26,21 +26,15 @@ const SecuritySectionCyberpunk = () => {
 
   return (
     <section className="py-20 md:py-28 px-6 md:px-10 lg:px-20 bg-background relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 cyber-grid opacity-10"></div>
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
-      </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 rounded-full glass border border-success/30 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-muted text-muted-foreground border border-border text-sm font-medium mb-6">
             <Shield className="w-4 h-4 mr-2 text-success" />
             Enterprise-Grade Security
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            <span className="gradient-text">Your Security</span> is Our Priority
+            <span className="text-foreground">Your Security</span> is Our Priority
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We employ industry-leading security measures to protect your financial data and give you peace of mind.
@@ -51,14 +45,14 @@ const SecuritySectionCyberpunk = () => {
           {securityFeatures.map((feature, index) => (
             <div
               key={index}
-              className="glass neon-border p-8 rounded-2xl hover:glow-neon transition-all duration-300 group"
+              className="bg-card border border-border p-8 rounded-2xl transition-all duration-300 group"
             >
               <div className="flex items-start gap-6">
-                <div className="icon-bg-neon flex-shrink-0 group-hover:glow-purple transition-all duration-300">
+                <div className="w-16 h-16 bg-primary/20 text-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <feature.icon className="w-8 h-8" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3 neon-text-purple">
+                  <h3 className="text-2xl font-bold text-foreground mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -70,14 +64,14 @@ const SecuritySectionCyberpunk = () => {
           ))}
         </div>
 
-        <div className="mt-16 glass neon-border-cyan rounded-2xl p-8">
+        <div className="mt-16 bg-card border border-border rounded-2xl p-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 cyber-gradient rounded-xl flex items-center justify-center glow-neon">
-                <Shield className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-primary/20 text-primary rounded-xl flex items-center justify-center">
+                <Shield className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground neon-text-purple">SOC 2 Type II Certified</h3>
+                <h3 className="text-xl font-bold text-foreground">SOC 2 Type II Certified</h3>
                 <p className="text-muted-foreground">Independently audited and verified security standards</p>
               </div>
             </div>

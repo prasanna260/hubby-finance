@@ -26,7 +26,7 @@ export default function ThemeToggle() {
       size="icon"
       aria-label="Toggle theme"
       onClick={toggle}
-      className="h-8 w-8 neon-text"
+      className="h-8 w-8"
       title={isDark ? 'Switch to light' : 'Switch to dark'}
     >
       {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}

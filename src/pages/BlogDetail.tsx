@@ -550,7 +550,7 @@ const BlogDetail = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <Card className="max-w-md">
           <CardContent className="pt-6 text-center">
             <h2 className="text-2xl font-bold mb-4">Blog Post Not Found</h2>
@@ -581,7 +581,7 @@ const BlogDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12">
         <Link to="/blog">
           <Button variant="ghost" className="mb-6">
@@ -597,7 +597,7 @@ const BlogDetail = () => {
               {post.category}
             </Badge>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               {post.title}
             </h1>
 

@@ -61,7 +61,8 @@ const Subscriptions: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-8 px-4">
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto py-8 px-4">
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold flex items-center gap-2">
@@ -112,6 +113,7 @@ const Subscriptions: React.FC = () => {
           </TabsContent>
         </Tabs>
       )}
+      </div>
     </div>
   );
 };

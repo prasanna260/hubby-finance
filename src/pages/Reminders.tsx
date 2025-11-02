@@ -274,7 +274,8 @@ const Reminders = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Payment Reminders</h1>
@@ -397,6 +398,7 @@ const Reminders = () => {
           Add Reminder
         </Button>
       )}
+      </div>
     </div>
   );
 };

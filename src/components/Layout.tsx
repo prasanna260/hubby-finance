@@ -27,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
             <header className="h-16 flex items-center px-6 bg-white border-b border-slate-200 shadow-sm">
               <SidebarTrigger className="mr-4" />
               <div className="flex items-center flex-1">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold mr-3 shadow-sm" style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' }}>
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center font-bold mr-3 shadow-sm bg-primary text-primary-foreground">
                   M
                 </div>
                 <span className="font-display font-bold text-xl text-slate-800">Mite Fi</span>
